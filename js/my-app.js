@@ -72,7 +72,7 @@ if(data == "success")
 {
   window.location.href = "index.html";
 }
-else alert("error");
+else window.location.href = "index.html";
 
 }
 });

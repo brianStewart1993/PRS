@@ -58,7 +58,7 @@ function saveTaskId(taskId)
 	success: function(html) {
 	if(html == "session Created")
 	{
-	 window.location.href = "http://testing.unicoreonline.com/CompleteTask.html";
+	 window.location.href = "CompleteTask.html";
 	}
 	else alert("error");
 	}

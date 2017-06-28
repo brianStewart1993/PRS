@@ -29,7 +29,7 @@ data: dataString,
 cache: false,     // To send DOMDocument or non processed data file it is set to false
 success: function(data)   // A function to be called if request succeeds
 {
-  window.location.href = "http://testing.unicoreonline.com/MessagePage.html";
+  window.location.href = "MessagePage.html";
 }
 });
 };

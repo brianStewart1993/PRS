@@ -71,7 +71,7 @@ function saveProjectSelection(projectId)
 	success: function(html) {
 	if(html == "session Created")
 	{
-	 window.location.href = "http://testing.unicoreonline.com/ViewTasksClients.html";
+	 window.location.href = "ViewTasksClients.html";
 	}
 	else alert("error");
 	}

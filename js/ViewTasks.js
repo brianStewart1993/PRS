@@ -44,7 +44,7 @@ else
 		
 		$(".card").click(function(){
 			saveTaskId($(this).attr("data-taskId"));
-			window.location.href = "http://testing.unicoreonline.com/CompleteTask.html"
+			window.location.href = "CompleteTask.html"
 		});
 	}
 	});
@@ -63,7 +63,7 @@ function saveTaskId(taskId)
 	success: function(html) {
 	if(html == "session Created")
 	{
-	 window.location.href = "http://testing.unicoreonline.com/CompleteTask.html";
+	 window.location.href = "CompleteTask.html";
 	}
 	else alert("error");
 	}

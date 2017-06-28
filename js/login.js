@@ -20,8 +20,8 @@ cache: false,
 success: function(html) 
 {
 	if(html == "Employee")
-	window.location.href = "http://testing.unicoreonline.com/ViewProjects.html";
-	else if (html == "Client") window.location.href = "http://testing.unicoreonline.com/ViewProjectsClients.html";
+	window.location.href = "ViewProjects.html";
+	else if (html == "Client") window.location.href = "ViewProjectsClients.html";
 	else if (html == "Login Unsuccessful") alert(html);
 	
 }

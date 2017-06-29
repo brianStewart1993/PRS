@@ -60,6 +60,7 @@ cache: false,
 success: function(html) {
 if(html == "Message Successfully Sent")
 {
+	document.getElementById("messagetxt").value = "";
  // location.reload();
 }
 else alert("error");

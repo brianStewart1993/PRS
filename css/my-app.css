@@ -171,7 +171,7 @@ p
 }
 
 #scroll {
-  width: 300px;
+  width: 99%;
   height: 350px;
   overflow-y: scroll;
 }

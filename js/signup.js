@@ -10,7 +10,6 @@ var dataString = 'username=' + name + '&email=' + email + '&password=' + passwor
 if (name == '' || email == '' || password == '' || userType == '') {
 alert("Please Fill All Fields");
 } else {
-alert("ajax time");
 // AJAX code to submit form.
 $.ajax({
 type: "POST",

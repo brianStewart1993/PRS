@@ -107,9 +107,25 @@ function sendRequest(){
         }});
 };
 
-function gotobottom() {
-	alert("hi");
-	window.scrollTo(0, document.body.scrollHeight);
-}
+$(function() {
+  var height = 0;
+
+  function scroll(height, ele) {
+    this.stop().animate({
+      scrollTop: height
+    }, 1000, function() {
+      var dir = height ? "top" : "bottom";
+      $(ele).html("scroll to " + dir).attr({
+        id: dir
+      });
+    });
+  };
+  var wtf = $('#scroll');
+  $("#bottom, #top").click(function() {
+    height = height < wtf[0].scrollHeight ? wtf[0].scrollHeight : 0;
+    scroll.call(wtf, height, this);
+  });
+});
+
 
 window.onload = getUsers();

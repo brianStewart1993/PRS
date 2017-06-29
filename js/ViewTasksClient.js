@@ -41,6 +41,12 @@ else
 						
 			$("#example-table").append(template);
 		}
+		
+		
+		$(".card").click(function(){
+			saveTaskId($(this).attr("data-taskId"));
+			window.location.href = "CompleteTaskClient.html"
+		});
 	}
 	});
 }

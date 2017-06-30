@@ -92,29 +92,22 @@
           <!-- Page, data-page contains page name-->
           <div data-page="MessagePage" class="page">
             <!-- Scrollable page content-->
-            <div class="page-content">
-              <div class="content-block">
-                <div class="content-block-inner">
 				<div class="page-content messages-content">
 				<center>
-				<button id="bottom">Go to Bottom </button>
+				<!--<button id="bottom"> Bottom </button> -->
 				</center>
 				<div id="scroll">
       <div id="messageinfo" class="messages">
 	   
 	   </div>
 	   </div>
-
-	   <form id="sendMessageForm" method="post" enctype="multipart/form-data">
+         	   <form id="sendMessageForm" class="floating" method="post" enctype="multipart/form-data">
 	<!--   <input type="file" name="file" id="file" /> -->
   <input type="text" id="messagetxt" class="mytext" placeholder="Type a message"><br>
   <input type="button" onclick="send()" class="button" value="Send">
 </form>
-              </div>
-              
-            </div>
-          </div>
-        </div>
+	       </div>
+         
         <!-- Bottom Toolbar-->
 		
       </div>

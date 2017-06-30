@@ -1,5 +1,6 @@
 function getUsers()
 {
+	gotobottom();
 	sendRequest();
 	var userid =  "1";
   var dataString = 'userid=' + userid; 
@@ -108,6 +109,22 @@ function sendRequest(){
         }});
 };
 
+function gotobottom() {
+	var height = 0;
+	var dir = height ? "top" : "bottom";
+	var wtf = $('#scroll');
+
+	
+	height = height < wtf[0].scrollHeight ? wtf[0].scrollHeight : 0;
+	for(i=0;i<100; i++)
+	{
+		height = height + height;
+        scroll.call(wtf, height, this);
+	}
+
+};
+
+
 $(function() {
   var height = 0;
 
@@ -124,7 +141,7 @@ $(function() {
   var wtf = $('#scroll');
   $("#bottom, #top").click(function() {
     height = height < wtf[0].scrollHeight ? wtf[0].scrollHeight : 0;
-    scroll.call(wtf, height, this);
+    //scroll.call(wtf, height, this);
   });
 });
 

@@ -97,6 +97,17 @@ alert(data);
 });
 };
 
+ function scroll(height, ele) {
+    this.stop().animate({
+      scrollTop: height
+    }, 1000, function() {
+      var dir = height ? "top" : "bottom";
+      $(ele).html("scroll to " + dir).attr({
+        id: dir
+      });
+    });
+  };
+
 function sendRequest(){
     $.ajax({
         url: "http://testing.unicoreonline.com/getMessages.php",

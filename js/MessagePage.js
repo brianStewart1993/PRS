@@ -71,14 +71,14 @@ else alert("error");
 return false;
 };
 
+
 function sendMessage()
 { 
   var textMessage = document.getElementById("messagetxt").value;
 //var userid =  "1";
   var dataString = 'messagetxt=' + textMessage; 
-  alert(dataString);
 $.ajax({
-url: "http://testing.unicoreonline.com/sendMessage.php", // Url to which the request is send
+url: "http://testing.unicoreonline.com/getMessagesCount.php", // Url to which the request is send
 type: "POST",            // Type of request to be send, called as method
 data: dataString, // Data sent to server, a set of key/value pairs (i.e. form fields and values)
 contentType: false,       // The content type used when sending data to the server.
@@ -90,13 +90,30 @@ success: function(data)   // A function to be called if request succeeds
 //{
   //location.reload();
 //}
-alert(data);
 //else alert("error");
 
+ //localStorage.setItem("lastmessage", data);
+ var a = localStorage.getItem("lastmessage")
+ if(a !== null)
+ {
+	 if(data == a )
+	 {
+	 }
+	 else
+	 {
+		 gotobottom();
+		 localStorage.setItem("lastmessage", data);
+	 }
+ }
+ 
+ else localStorage.setItem("lastmessage", data);
+ 
+ 
+
+ 
 }
 });
 };
-
  function scroll(height, ele) {
     this.stop().animate({
       scrollTop: height
@@ -113,6 +130,7 @@ function sendRequest(){
         url: "http://testing.unicoreonline.com/getMessages.php",
         success: 
           function(result){
+			  sendMessage();
            $('#messageinfo').html(result); //insert text of test.php into your div
            setTimeout(function(){
           sendRequest(); //this will send request again and again;

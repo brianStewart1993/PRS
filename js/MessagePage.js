@@ -175,4 +175,40 @@ $(function() {
 });
 
 
+$(document).ready(function() {
+   // process the form
+    $('#sendMessageForm').submit(function(event) {
+var ProjectName = "hi";
+var messagetext = document.getElementById("messagetxt").value;
+
+//alert("data recieved");
+
+// Returns successful data submission message when the entered information is stored in database.
+var dataString = 'ProjectName=' + ProjectName + '&messagetext=' + messagetext;
+
+if (ProjectName == '' || messagetext == '' ) {
+alert("Please Fill All Fields");
+} else {
+// AJAX code to submit form.
+$.ajax({
+type: "POST",
+url: "http://testing.unicoreonline.com/sendMessage.php",
+data: dataString,
+cache: false,
+success: function(html) {
+if(html == "Message Successfully Sent")
+{
+	document.getElementById("messagetxt").value = "";
+ // location.reload();
+}
+else alert("error");
+}
+});
+}   // stop the form from submitting the normal way and refreshing the page
+        event.preventDefault();
+    });
+
+});
+
+
 window.onload = getUsers();

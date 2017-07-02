@@ -44,4 +44,38 @@ $("#ProjectName").html(data);
 });
 };
 
+$(document).ready(function() {
+   // process the form
+    $('#CreateTask').submit(function(event) {
+
+var TaskName = document.getElementById("TaskName").value;
+var ProjectName = document.getElementById("ProjectName").value;
+var Resources = document.getElementById("Resources").value;
+var EndTime = document.getElementById("EndTime").value;
+var StartTime = document.getElementById("StartTime").value;
+//alert("data recieved");
+
+// Returns successful data submission message when the entered information is stored in database.
+var dataString = 'ProjectName=' + ProjectName + '&TaskName=' + TaskName + '&Resources=' + Resources+ '&StartTime=' + StartTime + '&EndTime=' + EndTime; 
+
+
+if (ProjectName == '' || TaskName == '' || Resources == '' || EndTime == '' || StartTime == '') {
+alert("Please Fill All Fields");
+} else {
+// AJAX code to submit form.
+$.ajax({
+type: "POST",
+url: "http://testing.unicoreonline.com/CreateTaskPrs.php",
+data: dataString,
+cache: false,
+success: function(html) {
+alert(html);
+}
+});
+}     // stop the form from submitting the normal way and refreshing the page
+        event.preventDefault();
+    });
+
+});
+
 window.onload = getProjectNames();

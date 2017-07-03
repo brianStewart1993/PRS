@@ -171,11 +171,22 @@ p
 }
 
 #scroll {
-position:relative;
+
+
   width: 99%;
-  min-height: 320px;
-  height: 60%;
+  height: 80%;
   overflow-y: scroll;
+
+  
+}
+#sendMessageForm
+{
+
+	
+  text-align:center;
+  width: 99%;
+  height: 20%;
+
 }
 #bottom,
 #top {
